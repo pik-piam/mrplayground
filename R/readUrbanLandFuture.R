@@ -1,6 +1,6 @@
 #' @title readUrbanLandFuture
 #' @description read in gridded future urban land use datasets
-#' @param source Currently only from LUH2v2 for all SSPs, LUH2v2 uses IMAGE
+#' @param subtype Currently only from LUH2v2 for all SSPs, LUH2v2 uses IMAGE
 #' @return magpie object of gridded future urban land use in Mha, 2015-2100
 #' @author David Chen
 #' @seealso \code{\link{readSource}}
