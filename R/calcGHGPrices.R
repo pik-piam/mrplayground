@@ -78,8 +78,8 @@ calcGHGPrices <- function(emissions="pollutants",datasource="REMMAG") {
     
     y[,,]<-0
     y[,,"co2_c"]<-x                                           
-    y[,,"ch4"]<-(x*28/3.66)    
-    y[,,c("n2o_n_direct","n2o_n_indirect")]<-collapseNames(x)*298*1.57/3.66                                              
+    y[,,"ch4"]<-(x*28*12/44)    
+    y[,,c("n2o_n_direct","n2o_n_indirect")]<-collapseNames(x)*265*44/28*12/44
     x<-y[,,c(pollutants)]
     
     if(emissions=="ghg"){

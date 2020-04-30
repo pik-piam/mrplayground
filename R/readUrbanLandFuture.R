@@ -1,6 +1,6 @@
 #' @title readUrbanLandFuture
 #' @description read in gridded future urban land use datasets
-#' @param source Currently only from LUH2v2 for all SSPs, LUH2v2 uses IMAGE
+#' @param subtype Currently only from LUH2v2 for all SSPs, LUH2v2 uses IMAGE
 #' @return magpie object of gridded future urban land use in Mha, 2015-2100
 #' @author David Chen
 #' @seealso \code{\link{readSource}}
@@ -10,8 +10,8 @@
 #' @importFrom magclass as.magpie mbind
 
 
-readUrbanLandFuture <- function(source="LUH2v2") {
-
+readUrbanLandFuture <- function(subtype) {
+if(subtype=="LUH2v2"){
   files <- list.files(path=paste0("./"),  pattern='states', all.files=TRUE, full.names=FALSE)
   
   #select years
@@ -61,4 +61,9 @@ readUrbanLandFuture <- function(source="LUH2v2") {
     x[is.na(x)] <- 0
     getNames(x) <- paste0("SSP",c(1:5))
     return(x)
+
+}
+  if(subtype!="LUH2v2") {
+    stop("Not a Valid Subtype")
+  }
 }

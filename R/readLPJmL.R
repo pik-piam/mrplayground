@@ -146,9 +146,10 @@ readLPJmL <- function(subtype="LPJmL5:CRU4p02.soilc"){
 
     start_year  <- start_year         # Start year of data set
     years       <- years              # Vector of years that should be exported
-    nbands      <- 12                 # Number of bands in the .bin file
+    nbands      <- 1                  # Number of bands in the .bin file
     avg_range   <- 1                  # Number of years used for averaging
 
+    # monthly values
     x <- readLPJ(
       file_name=path(folder,file_name),
       wyears=years,
@@ -169,7 +170,7 @@ readLPJmL <- function(subtype="LPJmL5:CRU4p02.soilc"){
       getSets(x)[4:5]  <- c("data" , "month")
     }
     
-    # annual value as total over all month
+    # annual value (total over all month)
     if(!grepl("^m", subtype)){
       x <- dimSums(x, dim="month")  
     }
