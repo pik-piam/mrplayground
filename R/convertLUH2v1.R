@@ -1,4 +1,5 @@
 #' @importFrom magclass getRegionList<-
+#' @importFrom luscale groupAggregate
 convertLUH2v1<-function(x,subtype){
   mapping<-toolMappingFile(type="cell",name="CountryToCellMapping.csv",readcsv=TRUE)  
   getRegionList(x) <- rep("GLO",ncells(x))

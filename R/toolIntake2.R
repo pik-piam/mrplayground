@@ -9,6 +9,7 @@
 #' @param method method for calculating intake: either FAO_WHO_UNU1985 for estimates based on height and bodyweight, schofield for just bodyweight, or HHS_USDA for recommended values for US-americans
 #' @param inactivity the activity level and the bodyweight computed by the readHic2015 function
 #' @author Eleonora Martinelli
+#' @importFrom luscale speed_aggregate
 #' @export
 
 

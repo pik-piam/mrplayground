@@ -7,8 +7,7 @@
 #' MAgPIE objects
 #' @author Isabelle Weindl
 #' @seealso \code{\link{calcOutput}}, \code{\link{readFAO}},
-#' \code{\link{convertFAO}}, \code{\link{calcFAOLivePrim}},
-#' \code{\link{readSource}}
+#' \code{\link{convertFAO}}, \code{\link{readSource}}
 #' @examples
 #' 
 #' \dontrun{ 

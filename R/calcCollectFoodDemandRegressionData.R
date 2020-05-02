@@ -1,4 +1,5 @@
 #' @importFrom magclass setNames
+#' @importFrom mrcommons toolFAOcombine
 
 
 calcCollectFoodDemandRegressionData<-function()

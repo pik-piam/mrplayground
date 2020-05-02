@@ -17,6 +17,7 @@
 #' }
 #' @importFrom SPEI thornthwaite
 #' @importFrom magpiesets findset
+#' @importFrom mrcommons toolCell2isoCell
 
 
 calcIPCCClimateRegions<-function(landusetypes="all", cellular=FALSE, yearly=FALSE, convert=TRUE){

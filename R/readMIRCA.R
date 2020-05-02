@@ -12,7 +12,7 @@
 #' }
 #'
 #' @importFrom magclass read.magpie
-#' @importFrom raster raster extent aggregate
+#' @importFrom raster raster extent aggregate extent<-
 
 readMIRCA<-function(subtype="multicropping"){
   

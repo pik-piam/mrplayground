@@ -1,64 +1,66 @@
-Package: moinput
+Package: mrplayground
 Type: Package
-Title: Model Operations Input Data Library
-Version: 9.344.4
-Date: 2020-04-30
-Author: Lavinia Baumstark, Anastasis Giannousakis, Jan Philipp Dietrich, Ulrich
-    Kreidenweis, Benjamin Bodirsky, Isabelle Weindl, Mishko Stevanovic, Xiaoxi Wang, Ewerton Araujo, Florian Humpenoeder, Stephen Wirth, Kristine Karstens, Abhijeet Mishra
-Maintainer: Anastasis Giannousakis <giannou@pik-potsdam.de>
-Description: Provides useful functions and a common structure to all the input data required to run models like MAgPIE and REMIND
-    of model input data.
+Title: MadRat playground
+Version: 0.0.1
+Date: 2020-05-02
+Authors@R: c(person("Jan Philipp", "Dietrich", email = "dietrich@pik-potsdam.de", role = c("aut","cre")),
+             person("David", "Chen", role = "aut"),
+             person("Aman", "Malik", role = "aut"),
+             person("Kristine", "Karstens", role = "aut"),
+             person("Lavinia", "Baumstark", role = "aut"),
+             person("Benjamin Leon", "Bodirsky", role = "aut"),
+             person("Abhijeet", "Mishra", role = "aut"),
+             person("Jasmin", "Wehner", role = "aut"),
+             person("Renato", "Rodrigues", role = "aut"),
+             person("Debbora", "Leip", role = "aut"),
+             person("Felix", "Schreyer", role = "aut"),
+             person("Nele", "Steinmetz", role = "aut"),
+             person("Isabelle", "Weindl", role = "aut"),
+             person("Ulrich", "Kreidenweis", role = "aut"),
+             person("Xiaoxi", "Wang", role = "aut"),
+             person("Atreya", "Shankar", role = "aut"),
+             person("Ewerton", "Araujo", role = "aut"),
+             person("Florian", "Humpenoeder", role = "aut"),
+             person("Jasmin", "Wehner ", role = "aut"),
+             person("Marcos", "Marcolino", role = "aut"),
+             person("Stephen", "Wirth", role = "aut"),
+             person("David", "Klein", role = "aut"),
+             person("Eleonora", "Martinelli", role = "aut"),
+             person("Julian", "Oeser", role = "aut"))
+Description: This package is a collection of unused read- calc- and tool- functions from the madrat universe. Most of them were used at some point, but not required anymore. They are stored here in case that they might become relevant again. PLEASE NEVER USE THIS PACKAGE FOR YOUR WORK DIRECTLY. If you find something useful here, please move it to our project instead. This package is not actively managed and might change over time in functionality or even vanish completely!
 Depends:
     R(>= 2.10.0),
     magclass(>= 3.17),
     madrat(>= 1.30),
+    mrcommons
 Imports:
+    SPEI,
     abind,
-    assertr(>= 2.4),
-    assertthat,
-    compiler,
+    alabama,
     countrycode,
     data.table,
+    demystas,
     doParallel,
     dplyr,
     foreach,
-    lazyeval,
     lpjclass,
     luscale,
-    lucode,
     magpiesets,
-	mstools,
+    mgsub,
     ncdf4,
-	nleqslv,
-	nnls,
-    parallel,
     plyr,
     quitte,
     raster,
     readr,
     readxl,
-    reshape,
     reshape2,
-    rhdf5,
-    rlang,
-    R.utils,
-    SPEI,
     stringi,
-    stringr,
-    tidyr,
-    tools,
-    utils,
-	mgsub,
-    zoo,
-    WDI,
-	gdata,
-    demystas,
-    alabama
+    tidyr
 License: LGPL-3 | file LICENSE
 LazyData: no
 Encoding: UTF-8
 RoxygenNote: 7.1.0
-ValidationKey: 1717687608
+ValidationKey: 18384
 Suggests: knitr,
     testthat,
     rmarkdown,

@@ -1,3 +1,5 @@
+#' @importFrom mrcommons toolHoldConstantBeyondEnd
+
 calcDem_material_structure<-function(){
   warning("This function is depreciated.")
   massbalance<-calcOutput("FAOmassbalance",aggregate = F)

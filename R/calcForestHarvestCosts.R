@@ -7,8 +7,7 @@
 #' 
 #' @return MAgPIE object of the calculated means of each MAgPIE region
 #' @author Abhijeet Mishra
-#' @seealso \code{\link{calcOutput}}, \code{\link{readSathayeForest}},
-#' \code{\link{convertSathayeForest}}
+#' @seealso \code{\link{calcOutput}}
 #' @examples
 #' 
 #' \dontrun{ 

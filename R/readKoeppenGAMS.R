@@ -11,6 +11,7 @@
 #' readSource("readKoeppenGAMS")
 #' }
 #' @importFrom madrat toolGetMapping
+#' @importFrom utils read.table
 
 readKoeppenGAMS <-function(){
   

@@ -16,6 +16,7 @@
 #' @importFrom magclass as.magpie
 #' @importFrom readxl read_excel
 #' @importFrom stringi stri_trans_general
+#' @importFrom stats complete.cases
 
 readGPFADB_2005 <- function(subtype){
 
