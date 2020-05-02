@@ -1,7 +1,10 @@
 #' @importFrom madrat vcat
 
+.onAttach <- function(libname, pkgname) {
+  packageStartupMessage("The mrplayground package is used for archiving only. DO NOT INCLUDE IT IN YOUR WORK! If you need a function from it, move it to another package first!")
+}
+
 .onLoad <- function(libname, pkgname){
-  message("The mrplayground package is used for archiving only. DO NOT INCLUDE IT IN YOUR WORK! If you need a function from it, move it to another package first!")
   madrat::setConfig(packages=c(madrat::getConfig("packages"),pkgname), .cfgchecks=FALSE, .verbose=FALSE)
   madrat::setConfig(nolabels=c(madrat::getConfig("nolabels"),"REMIND"), .cfgchecks=FALSE, .verbose=FALSE)
 }
