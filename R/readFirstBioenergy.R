@@ -3,7 +3,7 @@
 
 
 readFirstBioenergy <- function() {
-  file <- "F:/Dropbox/magpie/moinput/1stGenerationBioenergyDemand.csv"
+  file <- "1stGenerationBioenergyDemand.csv"
   df <- read.csv(file,sep=",")
   df$Commodities <- tolower(df$Commodities)
   molten <- melt(df)

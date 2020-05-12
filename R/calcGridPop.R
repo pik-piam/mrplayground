@@ -51,7 +51,7 @@ calcGridPop <- function(subtype="all", cellular=TRUE,FiveYear=TRUE, harmonize_un
     CountryToCell     <- toolGetMapping("CountryToCellMapping.csv", type = "cell")
     agg   <- toolAggregate(gridpop, rel=CountryToCell, from="celliso", to="iso", partrel=TRUE)
     
-    ## scale to match moinput country-level pop 
+    ## scale to match madrat country-level pop 
     pop <- calcOutput("Population",aggregate=F)[,,1:5]
     pop <- time_interpolate(pop, interpolated_year=getYears(agg))
     

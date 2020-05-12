@@ -1,0 +1,79 @@
+{
+  "title": "mrplayground: MadRat playground",
+  "version": "0.0.3",
+  "description": "<p>This package is a collection of unused read- calc- and tool- functions from the madrat universe. Most of them were used at some point, but not required anymore. They are stored here in case that they might become relevant again. PLEASE NEVER USE THIS PACKAGE FOR YOUR WORK DIRECTLY. If you find something useful here, please move it to our project instead. This package is not actively managed and might change over time in functionality or even vanish completely!<\/p>",
+  "creators": [
+    {
+      "name": "Dietrich, Jan Philipp"
+    },
+    {
+      "name": "Chen, David"
+    },
+    {
+      "name": "Malik, Aman"
+    },
+    {
+      "name": "Karstens, Kristine"
+    },
+    {
+      "name": "Baumstark, Lavinia"
+    },
+    {
+      "name": "Bodirsky, Benjamin Leon"
+    },
+    {
+      "name": "Mishra, Abhijeet"
+    },
+    {
+      "name": "Wehner, Jasmin"
+    },
+    {
+      "name": "Rodrigues, Renato"
+    },
+    {
+      "name": "Leip, Debbora"
+    },
+    {
+      "name": "Schreyer, Felix"
+    },
+    {
+      "name": "Steinmetz, Nele"
+    },
+    {
+      "name": "Weindl, Isabelle"
+    },
+    {
+      "name": "Kreidenweis, Ulrich"
+    },
+    {
+      "name": "Wang, Xiaoxi"
+    },
+    {
+      "name": "Shankar, Atreya"
+    },
+    {
+      "name": "Araujo, Ewerton"
+    },
+    {
+      "name": "Humpenoeder, Florian"
+    },
+    {
+      "name": "Wehner , Jasmin"
+    },
+    {
+      "name": "Marcolino, Marcos"
+    },
+    {
+      "name": "Wirth, Stephen"
+    },
+    {
+      "name": "Klein, David"
+    },
+    {
+      "name": "Martinelli, Eleonora"
+    },
+    {
+      "name": "Oeser, Julian"
+    }
+  ]
+}

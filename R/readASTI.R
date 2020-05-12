@@ -24,8 +24,7 @@ readASTI <- function() {
   
   # transform to a magpie object 
   country <- x$country
-  #data(moinput)
-  iso_country <- read.csv2(system.file("extdata","iso_country.csv",package = "moinput"),row.names=NULL)
+  iso_country <- read.csv2(system.file("extdata","iso_country.csv",package = "mrplayground"),row.names=NULL)
   iso_country1<-as.vector(iso_country[,"x"])
   names(iso_country1)<-iso_country[,"X"]
   tmp <- as.character(iso_country1[as.vector(country)])

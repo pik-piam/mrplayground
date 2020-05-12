@@ -1,4 +1,4 @@
 library(testthat)
-library(moinput)
+library(mrplayground)
 
-test_check("moinput")
+test_check("mrplayground")

@@ -20,7 +20,7 @@ readKoeppenGAMS <-function(){
     # readKoeppenGAMS returns data on cells which are not exactly harmonized with magpie cells
     
     # Look for common coordinates as magpie in the data received
-    coord <- toolGetMapping("coordinates.rda", where="moinput")
+    coord <- toolGetMapping("coordinates.rda", where="mrplayground")
     names(coord) <- c("Lon","Lat")  
     d <- merge(coord,kg,all.x=TRUE,sort=FALSE)
     

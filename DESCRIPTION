@@ -1,8 +1,8 @@
 Package: mrplayground
 Type: Package
 Title: MadRat playground
-Version: 0.0.2
-Date: 2020-05-02
+Version: 0.0.3
+Date: 2020-05-12
 Authors@R: c(person("Jan Philipp", "Dietrich", email = "dietrich@pik-potsdam.de", role = c("aut","cre")),
              person("David", "Chen", role = "aut"),
              person("Aman", "Malik", role = "aut"),
@@ -60,9 +60,11 @@ License: LGPL-3 | file LICENSE
 LazyData: no
 Encoding: UTF-8
 RoxygenNote: 7.1.0
-ValidationKey: 36768
+ValidationKey: 55182
 Suggests: knitr,
     testthat,
     rmarkdown,
 	ggplot2
+URL: https://github.com/pik-piam/mrplayground
+BugReports: https://github.com/pik-piam/mrplayground/issues
 VignetteBuilder: knitr
