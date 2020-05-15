@@ -1,6 +1,8 @@
 # MadRat playground
-#### R package **mrplayground**, version **0.1.1**
-[![Travis build status](https://travis-ci.com/pik-piam/mrplayground.svg?branch=master)](https://travis-ci.com/pik-piam/mrplayground) 
+
+R package **mrplayground**, version **0.1.2**
+
+[![Travis build status](https://travis-ci.com/pik-piam/mrplayground.svg?branch=master)](https://travis-ci.com/pik-piam/mrplayground)  
 
 ## Purpose and Functionality
 
@@ -36,10 +38,10 @@ In case of questions / problems please contact Jan Philipp Dietrich <dietrich@pi
 
 To cite package **mrplayground** in publications use:
 
-Dietrich J, Chen D, Malik A, Karstens K, Baumstark L, Bodirsky B, Mishra A, Wehner J, Rodrigues R, Leip D, Schreyer
-F, Steinmetz N, Weindl I, Kreidenweis U, Wang X, Shankar A, Araujo E, Humpenoeder F, Wehner J, Marcolino M, Wirth S,
-Klein D, Martinelli E, Oeser J (2020). _mrplayground: MadRat playground_. R package version 0.1.1, <URL:
-https://github.com/pik-piam/mrplayground>.
+Dietrich J, Chen D, Malik A, Karstens K, Baumstark L, Bodirsky B, Mishra A, Wehner J, Rodrigues R, Leip D,
+Schreyer F, Steinmetz N, Weindl I, Kreidenweis U, Wang X, Shankar A, Araujo E, Humpenoeder F, Wehner J,
+Marcolino M, Wirth S, Klein D, Martinelli E, Oeser J (2020). _mrplayground: MadRat playground_. R package
+version 0.1.2, <URL: https://github.com/pik-piam/mrplayground>.
 
 A BibTeX entry for LaTeX users is
 
@@ -48,7 +50,7 @@ A BibTeX entry for LaTeX users is
   title = {mrplayground: MadRat playground},
   author = {Jan Philipp Dietrich and David Chen and Aman Malik and Kristine Karstens and Lavinia Baumstark and Benjamin Leon Bodirsky and Abhijeet Mishra and Jasmin Wehner and Renato Rodrigues and Debbora Leip and Felix Schreyer and Nele Steinmetz and Isabelle Weindl and Ulrich Kreidenweis and Xiaoxi Wang and Atreya Shankar and Ewerton Araujo and Florian Humpenoeder and Jasmin {Wehner } and Marcos Marcolino and Stephen Wirth and David Klein and Eleonora Martinelli and Julian Oeser},
   year = {2020},
-  note = {R package version 0.1.1},
+  note = {R package version 0.1.2},
   url = {https://github.com/pik-piam/mrplayground},
 }
 ```
