@@ -14,9 +14,9 @@ readCEEW <- function(subtype){
   if (subtype=="Employment factors")
   {
     # Using following convention for tech names
-  #  techs <- c("Solar|CSP","Wind","Hydro","Biomass","Coal","Gas","Nuclear","Oil")
-  #  Using following convention for activity names
-  #  c("Manf","CI","OM")
+    #  techs <- c("Solar|CSP","Wind","Hydro","Biomass","Coal","Gas","Nuclear","Oil")
+    #  Using following convention for activity names
+    #  c("Manf","CI","OM")
     
     input <- readxl::read_excel("Employment_CEEW.xlsx",sheet = 1)
     tech <- input$Tech
@@ -36,18 +36,20 @@ readCEEW <- function(subtype){
   }
   
   if(subtype=="Employment")
-      {
-      input <- readxl::read_excel("Employment_CEEW.xlsx",sheet = 3)
-      # Assuming FY2016 to be year 2015 and FY2019 to be year 2018
-      input$Year <- gsub(x = input$Year,pattern = "FY16",replacement = "2015")
-      input$Year <- gsub(x = input$Year,pattern = "FY19",replacement = "2018")
-      input$Tech <- gsub(x = input$Tech,pattern = "Utility-scale Solar",replacement = "Solar|PV")
-      input$Tech <- gsub(x = input$Tech,pattern = "Rooftop Solar",replacement = "Solar|PV|Rooftop")
-      
-      x <- as.magpie(input,spatial=NULL)
-     # getRegions(x) <- "IND"
-      
-      return (x)
-      
+  {
+    input <- readxl::read_excel("Employment_CEEW.xlsx",sheet = 3)
+    # Assuming FY2016 to be year 2015 and FY2019 to be year 2018
+    input$Year <- gsub(x = input$Year,pattern = "FY16",replacement = "2015")
+    input$Year <- gsub(x = input$Year,pattern = "FY17",replacement = "2016")
+    input$Year <- gsub(x = input$Year,pattern = "FY18",replacement = "2017")
+    input$Year <- gsub(x = input$Year,pattern = "FY19",replacement = "2018")
+    input$Tech <- gsub(x = input$Tech,pattern = "Utility-scale Solar",replacement = "Solar|PV")
+    input$Tech <- gsub(x = input$Tech,pattern = "Rooftop Solar",replacement = "Solar|PV|Rooftop")
+    
+    x <- as.magpie(input,spatial=NULL)
+    # getRegions(x) <- "IND"
+    
+    return (x)
+    
   }
 }
