@@ -2,8 +2,9 @@
 #' @description  Data on historical (2015-2019) operating, under-construction, planned and announced Coal Plants by country (in MW) 
 #' from EndCoal.org (Actual source: Coal Swarm and Global Plant Tracker) 
 #' @author Aman Malik
-#' @import readxl
+#' @importFrom  readxl read_excel
 #' @import dplyr
+#' @importFrom stats na.omit
 
 
 # read in Data

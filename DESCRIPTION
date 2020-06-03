@@ -1,8 +1,8 @@
 Package: mrplayground
 Type: Package
 Title: MadRat playground
-Version: 0.1.2
-Date: 2020-05-15
+Version: 0.2.0
+Date: 2020-06-03
 Authors@R: c(person("Jan Philipp", "Dietrich", email = "dietrich@pik-potsdam.de", role = c("aut","cre")),
              person("David", "Chen", role = "aut"),
              person("Aman", "Malik", role = "aut"),
@@ -60,7 +60,7 @@ License: LGPL-3 | file LICENSE
 LazyData: no
 Encoding: UTF-8
 RoxygenNote: 7.1.0
-ValidationKey: 220764
+ValidationKey: 368320
 Suggests: knitr,
     testthat,
     rmarkdown,
