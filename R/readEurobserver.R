@@ -15,7 +15,7 @@ readEurobserver <- function(subtype){
   if (subtype=="employment")
   { 
     ## For Year 2014
-    input_2014 <- readxl::read_excel("Eurobserver.xlsx",sheet="2014",n_max = 28)
+    input_2014 <- read_xlsx("Eurobserver.xlsx",sheet="2014",n_max = 28,na = "n.a.")
     input_2014 <- input_2014[-2] # removing column "country totals"
     # removing asterisks and empty spaces in colnames
     colnames(input_2014) <- gsub(pattern = "\\*||\\*\\**||",replacement = "",x = colnames(input_2014))
@@ -27,7 +27,8 @@ readEurobserver <- function(subtype){
     input_2014[c(1:28),c(2:11)] <- mgsub(pattern =  c(" ","\\*","<"),
                                         replacement =c("","",""),string =  as.matrix(input_2014[c(1:28),c(2:11)]))
     # converting all numbers to numeric
-    input_2014[,2:11] <- as.numeric(unlist(input_2014[,2:11]))
+    input_2014[,2:11] <- sapply(input_2014[,2:11],as.numeric)
+  #  input_2014[,2:11] <- as.numeric(unlist(input_2014[,2:11]))
     colnames(input_2014)[1] <- "country"
     # adding column period
     input_2014$period <- 2014
@@ -42,7 +43,7 @@ readEurobserver <- function(subtype){
                                          c("Solar|PV","Waste","Hydropower"),string = colnames(input_2015))
     input_2015[c(1:28),c(2:11)] <- mgsub(pattern = c(" ","\\*","\\*\\*","n\\.a\\.","<"),
                                          replacement =c("","","","0",""),string =  as.matrix(input_2015[c(1:28),c(2:11)]))
-    input_2015[,2:11] <- as.numeric(unlist(input_2015[,2:11]))
+    input_2015[,2:11] <- sapply(input_2015[,2:11],as.numeric)
     input_2015$period <- 2015
     input_2015 <- input_2015[c(1,12,2:11)]
 
@@ -54,7 +55,7 @@ readEurobserver <- function(subtype){
                                          c("Solar|PV","Hydropower"),string = colnames(input_2016))
     input_2016[c(1:28),c(2:11)] <- mgsub(pattern = c(" ","\\*","<"),
                                          replacement =c("","",""),string =  as.matrix(input_2016[c(1:28),c(2:11)]))
-    input_2016[,2:11] <- as.numeric(unlist(input_2016[,2:11]))
+    input_2016[,2:11] <- sapply(input_2016[,2:11],as.numeric)
     input_2016$period <- 2016
     input_2016 <- input_2016[c(1,12,2:11)]
     
@@ -68,7 +69,7 @@ readEurobserver <- function(subtype){
     input_2017[c(1:28),c(2:11)] <- mgsub(pattern = c(" ","\\*","<"),
                                          replacement =c("","",""),string =  as.matrix(input_2017[c(1:28),c(2:11)]))
     
-    input_2017[,2:11] <- as.numeric(unlist(input_2017[,2:11]))
+    input_2017[,2:11] <- sapply(input_2017[,2:11],as.numeric)
     input_2017$period <- 2017
     input_2017 <- input_2017[c(1,12,2:11)]
     
@@ -82,7 +83,7 @@ readEurobserver <- function(subtype){
     input_2018[c(1:28),c(2:11)] <- mgsub(pattern = c(" ","\\*","<"),
                                          replacement =c("","",""),string =  as.matrix(input_2018[c(1:28),c(2:11)]))
     
-    input_2018[,2:11] <- as.numeric(unlist(input_2018[,2:11]))
+    input_2018[,2:11] <- sapply(input_2018[,2:11],as.numeric)
     input_2018$period <- 2018
     input_2018 <- input_2018[c(1,12,2:11)]
 
