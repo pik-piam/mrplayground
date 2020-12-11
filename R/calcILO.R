@@ -5,7 +5,7 @@ calcILO <- function(x,subtype){
   if(subtype=="Reliable")
   {
     x <- x[,,"Unreliable",pmatch=T,invert=T]
-    x[,,"Oil and Gas. "] <- x[,,"Oil and Gas. "]+x[,,"Coal and Lignite.Break in series"]
+    x[,,"Oil and Gas. "] <- x[,,"Oil and Gas. "]+x[,,"Oil and Gas.Break in series"]
     x[,,"Coal and Lignite. "] <- x[,,"Coal and Lignite. "]+x[,,"Coal and Lignite.Break in series"]
     x <- x[,,c("Oil and Gas. ","Coal and Lignite. ")]
     x <- collapseNames(x)

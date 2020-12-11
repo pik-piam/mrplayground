@@ -1,8 +1,8 @@
 Package: mrplayground
 Type: Package
 Title: MadRat playground
-Version: 0.5.0
-Date: 2020-10-12
+Version: 0.6.0
+Date: 2020-12-11
 Authors@R: c(person("Jan Philipp", "Dietrich", email = "dietrich@pik-potsdam.de", role = c("aut","cre")),
              person("David", "Chen", role = "aut"),
              person("Aman", "Malik", role = "aut"),
