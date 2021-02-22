@@ -59,10 +59,12 @@ License: LGPL-3 | file LICENSE
 LazyData: no
 Encoding: UTF-8
 RoxygenNote: 7.1.1
-Suggests: knitr,
+Suggests: 
+    knitr,
     testthat,
     rmarkdown,
-	ggplot2
+    ggplot2,
+    covr
 URL: https://github.com/pik-piam/mrplayground
 BugReports: https://github.com/pik-piam/mrplayground/issues
 VignetteBuilder: knitr
