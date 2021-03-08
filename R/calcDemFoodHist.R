@@ -7,8 +7,7 @@
 #' 
 #' @return Historical food demand
 #' @author Isabelle Weindl
-#' @seealso \code{\link{calcOutput}}, \code{\link{readDemandModel}},
-#' \code{\link{convertDemandModel}}
+#' @seealso \code{\link{calcOutput}}
 #' @examples
 #' 
 #' \dontrun{ 
