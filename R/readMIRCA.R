@@ -67,7 +67,7 @@ readMIRCA<-function(subtype="multicropping"){
     mirca_crops           <- read.csv("readme__growing_periods_listed.txt", sep = '\t',header = TRUE, fileEncoding = "us-ascii", skip=51, nrow=26)
     mirca_crops$CropClass <- gsub(" |\\.|\\/","", mirca_crops$CropClass)  
     
-    mapping   <- toolMappingFile(type="cell",name="CountryToCellMapping.csv", readcsv=TRUE)
+    mapping   <- toolGetMapping(type = "cell", name = "CountryToCellMapping.csv")
     cellNames <- mapping$celliso
     names     <- as.vector(outer(outer(outer(mirca_crops$CropClass, c("irrigated","rainfed"), paste, sep="."), c(1:9), paste, sep="."),c("area","start","end"), paste, sep="."))
     mag       <- array(0, dim=c(59199,1,length(names)),dimnames=list(cellNames,NULL,names))

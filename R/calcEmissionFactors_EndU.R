@@ -235,11 +235,18 @@ calcEmissionFactors_EndU <- function(datasource="ECLIPSE", sectoral_resolution="
       setsEmissions <- getSets(emissions)
       
       # read in sectoral mapping (ECLIPSE (IMAGE) <> EDGE)
-      map_sectors_ECLIPSE2EDGE    <- read.csv(toolMappingFile("sectoral", "mappingECLIPSEtoEDGEsectors.csv"), stringsAsFactors=TRUE)
+      map_sectors_ECLIPSE2EDGE <- read.csv(toolGetMapping(type = "sectoral",
+                                                          name = "mappingECLIPSEtoEDGEsectors.csv",
+                                                          returnPathOnly = TRUE),
+                                           stringsAsFactors = TRUE)
 
       # read in regional map (select ISO and GAINS codes only). This is required for the construction of the SSPs
-      map_REMINDregions  <- read.csv2(toolMappingFile("regional", "regionmappingREMIND.csv"), stringsAsFactors=TRUE)
-      map_regions  <- read.csv2(toolMappingFile("regional", p_dagg_map), stringsAsFactors=TRUE)[,c(2,3)] 
+      map_REMINDregions  <- read.csv2(toolGetMapping(type = "regional",
+                                                     name = "regionmappingREMIND.csv",
+                                                     returnPathOnly = TRUE),
+                                      stringsAsFactors = TRUE)
+      map_regions  <- read.csv2(toolGetMapping(type = "regional", name = p_dagg_map, returnPathOnly = TRUE),
+                                stringsAsFactors=TRUE)[,c(2,3)]
       map_regions  <- map_regions %>%  
         filter_(~CountryCode != "ANT") %>% # Remove Netherland Antilles (not in REMIND regional mapping)
         filter_(~RegionCode != "") %>% 

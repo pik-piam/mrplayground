@@ -7,7 +7,7 @@ calcEmissionsForScalingECLIPSE <- function() {
   # remove emissions we don't need for scaling
   a <- a[,,c("CH4","N2O","CO2","NH3"), invert = TRUE]
   
-  map_CEDS16_to_CEDS9  <- read.csv(toolMappingFile("sectoral", "mappingCEDS16toCEDS9.csv"), stringsAsFactors=FALSE)
+  map_CEDS16_to_CEDS9  <- toolGetMapping(type = "sectoral", name = "mappingCEDS16toCEDS9.csv")
 
   # remove sectors from mapping that are not in the data because otherwise toolAggregate complains
   remove_sector <- setdiff(map_CEDS16_to_CEDS9$CEDS16,getNames(a,dim=1))

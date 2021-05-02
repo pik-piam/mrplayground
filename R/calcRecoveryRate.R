@@ -21,7 +21,7 @@
 calcRecoveryRate <- function() {
   x <- readSource("WirseniusPHD")[,,"3_17",pmatch=TRUE]   
   # load sectoral mapping
-  map <- read.csv(toolMappingFile("sectoral","Wirsenius_magpieFEED_mapping.csv")) 
+  map <- toolGetMapping(type = "sectoral", name = "Wirsenius_magpieFEED_mapping.csv")
   map <- map[map$Table=="3_17",]
   # rename sectors
   x <- x[,,as.character(map$wirsenius_items)]

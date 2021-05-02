@@ -71,7 +71,7 @@ calcFAOForestryDemand <- function(){
 }
 
   ## Mapping procedure
-  # country2cell <- read.csv(toolMappingFile("cell","CountryToCellMapping.csv"))
+  # country2cell <- toolGetMapping(type = "cell", name = "CountryToCellMapping.csv")
   # 
   # xx <- toolAggregate(y,rel = country2cell,from = "iso",to = "cell",dim = 1,partrel = T)
   

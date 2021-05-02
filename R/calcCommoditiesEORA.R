@@ -60,7 +60,7 @@ calcCommoditiesEORA <- function(subtype){
   inputcountries <- getNames(x, dim=1)
   inputcountries <- inputcountries[inputcountries%in%countries]
   
-  rownames <- fread(toolMappingFile("sectoral","rownamesEORA_main.csv"))
+  rownames <- fread(toolGetMapping(type = "sectoral", name = "rownamesEORA_main.csv", returnPathOnly = TRUE))
   rownames[,"Sector" := gsub("[.]","_",rownames[["Sector"]]), with=FALSE]
   
   missingvalue <- 0

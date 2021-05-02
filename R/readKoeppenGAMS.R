@@ -30,7 +30,7 @@ readKoeppenGAMS <-function(){
     }
     colnames(d) <- c("lon","lat","Cls")
     
-    mappingFile <- toolMappingFile("cell","CountryToCellMapping.csv",error.missing=TRUE,readcsv = T)
+    mappingFile <- toolGetMapping(type = "cell", name = "CountryToCellMapping.csv", error.missing=TRUE)
     
     d <- merge(d,mappingFile,by = c("lon","lat"))
     

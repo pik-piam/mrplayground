@@ -2,7 +2,7 @@
 #' @importFrom magclass as.magpie getCells getSets<- getNames<- getSets getRegions<- mselect<- setNames write.magpie
 #' @importFrom tidyr gather_
 #' @importFrom utils read.csv read.csv2
-#' @importFrom madrat toolMappingFile
+#' @importFrom madrat toolGetMapping
 
 
 
@@ -18,7 +18,10 @@ calcAirPollution <- function(subtype) {
   emi           <- calcOutput("ECLIPSE_SSP",subtype="emissions", aggregate=FALSE)
   
   # exogenous emissions
-  map_sectors_ECLIPSE2REMIND <- read.csv(toolMappingFile("sectoral", "mappingECLIPSEtoREMINDsectors.csv"), stringsAsFactors=TRUE)
+  map_sectors_ECLIPSE2REMIND <- read.csv(toolGetMapping(type = "sectoral",
+                                                        name = "mappingECLIPSEtoREMINDsectors.csv",
+                                                        returnPathOnly = TRUE),
+                                         stringsAsFactors=TRUE)
   mapsec = map_sectors_ECLIPSE2REMIND[map_sectors_ECLIPSE2REMIND$eclipse %in% getNames(emi, dim=1), c(1,3)]
   emi = toolAggregate(emi, mapsec, dim=3.1)
   

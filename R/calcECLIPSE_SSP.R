@@ -60,7 +60,8 @@ calcECLIPSE_SSP <- function(subtype) {
   dimSector_skipEF = c("AACID", "CEMENT", "CHEM", "CHEMBULK", "CUSM", "NACID", "PAPER", "STEEL",
                        "Losses_Coal", "Losses_Distribution_Use", "Losses_Vent_Flare",
                        "Transformations_Coal", "Transformations_HLF", "Transformations_HLF_Refinery", "Transformations_LLF", "Transformations_NatGas")
-  map_regions  <- read.csv2(toolMappingFile("regional", p_dagg_map), stringsAsFactors=TRUE)[,c(2,3)] 
+  map_regions  <- read.csv2(toolGetMapping(type = "regional", name = p_dagg_map, returnPathOnly = TRUE),
+                            stringsAsFactors = TRUE)[,c(2,3)]
   map_regions  <- map_regions %>%  
     filter_(~CountryCode != "ANT") %>% # Remove Netherland Antilles (not in REMIND regional mapping)
     filter_(~RegionCode != "") %>% 
@@ -309,7 +310,10 @@ calcECLIPSE_SSP <- function(subtype) {
   emi[,c(2030,2050,2100),"SLCF_building_transport"] <- emi[,c(2030,2050,2100),"SSP2"]
   
   # ----- EFs for advanced coal and biomass technologies -------
-  map_sectors_ECLIPSE2REMIND <- read.csv(toolMappingFile("sectoral", "mappingECLIPSEtoREMINDsectors.csv"), stringsAsFactors=TRUE)
+  map_sectors_ECLIPSE2REMIND <- read.csv(toolGetMapping(type = "sectoral",
+                                                        name = "mappingECLIPSEtoREMINDsectors.csv",
+                                                        returnPathOnly = TRUE),
+                                         stringsAsFactors = TRUE)
   mapsec <- map_sectors_ECLIPSE2REMIND[map_sectors_ECLIPSE2REMIND$eclipse %in% getNames(ef, dim=1), c(1,3)]
   ef     <- toolAggregate(ef, mapsec, dim=3.1)
   
