@@ -1,6 +1,6 @@
 {
   "title": "mrplayground: MadRat playground",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "<p>This package is a collection of unused read- calc- and tool- functions from the madrat universe. Most of them were used at some point, but not required anymore. They are stored here in case that they might become relevant again. PLEASE NEVER USE THIS PACKAGE FOR YOUR WORK DIRECTLY. If you find something useful here, please move it to our project instead. This package is not actively managed and might change over time in functionality or even vanish completely!<\/p>",
   "creators": [
     {
