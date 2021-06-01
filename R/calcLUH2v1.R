@@ -64,7 +64,7 @@ calcLUH2v1<-function(landuse_types="magpie",irrigation=FALSE,cellular=FALSE,sele
   }
   
   if (landuse_types=="magpie") {
-    mapping<-toolMappingFile(type = "sectoral",name = "LUH2v1.csv",readcsv = TRUE)
+    mapping <- toolGetMapping(type = "sectoral", name = "LUH2v1.csv")
     #x<-groupAggregate(x,query=mapping,dim = 3,from="luh2v1",to="land")
     x<-toolAggregate(x,mapping,dim = 3.1,from="luh2v1",to="land")
   } else if (landuse_types=="LUH2v1") {

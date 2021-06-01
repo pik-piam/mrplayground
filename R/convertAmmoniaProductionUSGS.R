@@ -4,7 +4,7 @@ convertAmmoniaProductionUSGS <- function(x){
  tmp <- getRegions(x)
     tmp[match(usgstomagpie$Country.USGS, tmp, nomatch = FALSE)] <- usgstomagpie$Country.MagPIE
     getRegions(x) <- tmp
-  map <- toolMappingFile(type="regional", readcsv=T, name="regionmappingMAgPIE.csv")
+  map <- toolGetMapping(type = "regional", name = "regionmappingMAgPIE.csv")
   
   y <- toolAggregate(x,map, partrel=T, from=1, to=2)
   y <- toolCountryFill(y,fill = 0)

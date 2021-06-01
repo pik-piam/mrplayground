@@ -83,11 +83,20 @@ calcAirPollEmiFactors <- function(GENERATE_EXOGENEOUS_EMISSIONS=TRUE, VERBOSE=FA
 
 
   # read in sectoral mapping (LIMITS (TIMER) <> REMIND)
-  map_sectors       <- read.csv2(toolMappingFile("sectoral", "mappingLIMITStoLIMITSAggSectors.csv"), stringsAsFactors=TRUE)
-  map_REMINDSectors <- read.csv2(toolMappingFile("sectoral", "mappingLIMITSAggSectorstoREMIND.csv"), stringsAsFactors=TRUE)
+  map_sectors       <- read.csv2(toolGetMapping(type = "sectoral",
+                                                name = "mappingLIMITStoLIMITSAggSectors.csv",
+                                                returnPathOnly = TRUE),
+                                 stringsAsFactors=TRUE)
+  map_REMINDSectors <- read.csv2(toolGetMapping(type = "sectoral",
+                                                name = "mappingLIMITSAggSectorstoREMIND.csv",
+                                                returnPathOnly = TRUE),
+                                 stringsAsFactors=TRUE)
 
   # read in regional map (select ISO and TIMER codes only)
-  map_regions        <- read.csv2(toolMappingFile("regional", "regionmappingTIMER.csv"), stringsAsFactors=TRUE)[,c(2,4)]
+  map_regions        <- read.csv2(toolGetMapping(type = "regional",
+                                                 name = "regionmappingTIMER.csv",
+                                                 returnPathOnly = TRUE),
+                                  stringsAsFactors=TRUE)[,c(2,4)]
   names(map_regions) <- c("ISO3", "TIMER")
 
 

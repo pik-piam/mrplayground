@@ -31,7 +31,7 @@ lat<-pe<-p
 lat[,,]<-NA
 pe[,,]<-NA
 lat<-p[,1,1]
-lat[,,]<-as.numeric(toolMappingFile(type = "cell",name = "CountryToCellMapping.csv",readcsv = TRUE)$lat)
+lat[,,] <- as.numeric(toolGetMapping(type = "cell", name = "CountryToCellMapping.csv")$lat)
 lat<-setNames(setYears(lat,NULL),NULL)
 tmp<-t
 tmp<-aperm(tmp,c(3,2,1))
@@ -95,7 +95,7 @@ if (cellular==TRUE){
 }
 
 else if (cellular==FALSE){
-  CountryToCell  <- toolMappingFile(type="cell",name = "CountryToCellMapping.csv",readcsv = TRUE)
+  CountryToCell <- toolGetMapping(type = "cell", name = "CountryToCellMapping.csv")
   
   if (landusetypes=="all"){
       landuse<-calcOutput("LanduseInitialisation",cellular=TRUE,aggregate=FALSE)

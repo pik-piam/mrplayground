@@ -34,7 +34,7 @@ calcForestProtectionShare<-function(cellular=FALSE){
   }
   
   if (cellular==TRUE)  {
-    mapping<-toolMappingFile(type = "cell",readcsv = TRUE,name = "CountryToCellMapping.csv")
+    mapping <- toolGetMapping(type = "cell", name = "CountryToCellMapping.csv")
     celldata <- calcOutput("LanduseInitialisation", cellular=TRUE, aggregate=FALSE)
     protection_shr <- toolAggregate(x = protection_shr[unique(mapping$iso),,],rel = mapping,from="iso",to="celliso",dim=1)
     weight <- dimSums(celldata[,,c("primforest","secdforest")],dim=3)

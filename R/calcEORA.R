@@ -43,13 +43,15 @@ calcEORA <-function(subtype){
   
   # defining subfunctions
   aggEORA_inout <- function(x, frame, output_country, input_country){
-    rownames_main <- fread(toolMappingFile("sectoral","rownamesEORA_main.csv"))
+    rownames_main <- fread(toolGetMapping(type = "sectoral", name = "rownamesEORA_main.csv", returnPathOnly = TRUE))
     rownames_country <- rownames_main[rownames_main[["CountryA3"]]==output_country,]
     entities <- levels(as.factor(rownames_country[["Entity"]]))
     rm(rownames_main)
     rm(rownames_country)
     
-    categorisation <- fread(toolMappingFile("sectoral","categoriesEORA_output.csv"))
+    categorisation <- fread(toolGetMapping(type = "sectoral",
+                                           name = "categoriesEORA_output.csv",
+                                           returnPathOnly = TRUE))
     categories <- unique(categorisation[["Category"]])
     
     for(k in categories){
@@ -75,7 +77,7 @@ calcEORA <-function(subtype){
     vcat(verbosity = 2, paste0("Aggregating input country ", input_country, " (", counter, ")"))
     
     # getting categorisation 
-    categorisation <- fread(toolMappingFile("sectoral","categoriesEORA_input.csv"))
+    categorisation <- fread(toolGetMapping(type = "sectoral", name = "categoriesEORA_input.csv", returnPathOnly = TRUE))
     categories_input <- unique(categorisation[["Category"]])
     
     # creating empty magpie to fill
@@ -107,10 +109,14 @@ calcEORA <-function(subtype){
   aggEORA_outputs <- function(x, input_country, countries, year, counter){
     
     # getting categorisation
-    categorisation_input <- fread(toolMappingFile("sectoral","categoriesEORA_input.csv"))
+    categorisation_input <- fread(toolGetMapping(type = "sectoral",
+                                                 name = "categoriesEORA_input.csv",
+                                                 returnPathOnly = TRUE))
     categories_input <- unique(categorisation_input[["Category"]])
     rm(categorisation_input)
-    categorisation_output <- fread(toolMappingFile("sectoral","categoriesEORA_output.csv"))
+    categorisation_output <- fread(toolGetMapping(type = "sectoral",
+                                                  name = "categoriesEORA_output.csv",
+                                                  returnPathOnly = TRUE))
     categories_output <- unique(categorisation_output[["Category"]])
     rm(categorisation_output)
     
@@ -150,12 +156,16 @@ calcEORA <-function(subtype){
   }
   disaggEORA_inout <- function(x, frame, input_country, output_country, year, data){
     # get disaggregation info
-    disaggregation_output <- fread(toolMappingFile("sectoral", "disaggregationEORA_output.csv"))
+    disaggregation_output <- fread(toolGetMapping(type = "sectoral",
+                                                  name = "disaggregationEORA_output.csv",
+                                                  returnPathOnly = TRUE))
     magpie_cats_output <- disaggregation_output[["Step1"]] 
     
     
     # aggregated input-categories of this country
-    categorisation_output <- fread(toolMappingFile("sectoral", "categoriesEORA_output.csv"))
+    categorisation_output <- fread(toolGetMapping(type = "sectoral",
+                                                  name = "categoriesEORA_output.csv",
+                                                  returnPathOnly = TRUE))
     categories <- categorisation_output[categorisation_output[["CountryA3"]]==output_country,]
     categories <- unique(categories[["Category"]])
     rm(categorisation_output)
@@ -250,7 +260,9 @@ calcEORA <-function(subtype){
     vcat(verbosity = 2, paste0("Disaggregating input country ", input_country, " (", counter, ")"))
     
     # getting disaggregation info and create empty magpie to fill
-    disaggregation <- fread(toolMappingFile("sectoral", "disaggregationEORA_input.csv"))
+    disaggregation <- fread(toolGetMapping(type = "sectoral",
+                                           name = "disaggregationEORA_input.csv",
+                                           returnPathOnly = TRUE))
     magpie_cats <- disaggregation[["Step1"]]
     newcombinations <- levels(interaction(input_country, magpie_cats, getNames(x, dim=3)))
     
@@ -258,7 +270,9 @@ calcEORA <-function(subtype){
     rm(newcombinations)
     
     # aggregated input-categories of this country
-    categorisation_input <- fread(toolMappingFile("sectoral", "categoriesEORA_input.csv"))
+    categorisation_input <- fread(toolGetMapping(type = "sectoral",
+                                                 name = "categoriesEORA_input.csv",
+                                                 returnPathOnly = TRUE))
     categories <- categorisation_input[categorisation_input[["CountryA3"]]==input_country,]
     categories <- unique(categories[["Category"]])
     rm(categorisation_input)
@@ -348,9 +362,13 @@ calcEORA <-function(subtype){
   disaggEORA_outputs <- function(x, input_country, countries, year, data, counter){
     
     # getting disaggregation info and create empty magpie to mbind
-    disaggregation_input <- fread(toolMappingFile("sectoral", "disaggregationEORA_input.csv"))
+    disaggregation_input <- fread(toolGetMapping(type = "sectoral",
+                                                 name = "disaggregationEORA_input.csv",
+                                                 returnPathOnly = TRUE))
     magpie_cats_input <- disaggregation_input[["Step1"]] 
-    disaggregation_output <- fread(toolMappingFile("sectoral", "disaggregationEORA_output.csv"))
+    disaggregation_output <- fread(toolGetMapping(type = "sectoral",
+                                                  name = "disaggregationEORA_output.csv",
+                                                  returnPathOnly = TRUE))
     magpie_cats_output <- disaggregation_output[["Step1"]] 
     combinations <- levels(interaction(input_country, magpie_cats_input, magpie_cats_output))
     empt <- new.magpie("bla", year, combinations, fill=0)

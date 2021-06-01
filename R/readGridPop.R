@@ -22,7 +22,7 @@ readGridPop <- function(subtype) {
     offset=1860
     #year 850=1, year 1900=1051, year 2015=1166 timestep min=1
     
-    mapping<-toolMappingFile(type="cell",name="CountryToCellMapping.csv",readcsv=TRUE) 
+    mapping <- toolGetMapping(type="cell", name="CountryToCellMapping.csv")
     cellNames <- mapping$celliso
     lon <- seq(-179.75,179.75,by=0.5)
     lat <- rev(seq(-89.75,89.75,by=0.5))
@@ -73,7 +73,7 @@ readGridPop <- function(subtype) {
       offset=2005
       #year 850=1, year 1900=1051, year 2015=1166
       
-      mapping<-toolMappingFile(type="cell",name="CountryToCellMapping.csv",readcsv=TRUE) 
+      mapping <- toolGetMapping(type="cell", name="CountryToCellMapping.csv")
       cellNames <- mapping$celliso
       lon <- seq(-179.75,179.75,by=0.5)
       lat <- rev(seq(-89.75,89.75,by=0.5))

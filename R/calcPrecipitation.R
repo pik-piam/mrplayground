@@ -30,7 +30,7 @@ calcPrecipitation<-function(landusetypes="all", months=FALSE,convert=TRUE){
   landuse<-time_interpolate(landuse, interpolated_year = getYears(ppt),extrapolation_type = "constant")
   
   # Aggregation
-  CountryToCell  <- toolMappingFile(type="cell",name = "CountryToCellMapping.csv",readcsv = TRUE)
+  CountryToCell <- toolGetMapping(type="cell", name = "CountryToCellMapping.csv")
   landuse_sum<-dimSums(landuse,dim=3)
   out_sum <- toolAggregate(x = ppt, rel = CountryToCell ,weight = landuse_sum, from = "celliso", to = "iso", partrel = TRUE)
   

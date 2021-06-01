@@ -17,7 +17,7 @@
 calcManagementFactor <- function(){
   
   ## Define a mapping
-  map <- read.csv(toolMappingFile("regional",getConfig("regionmapping")),sep=";")
+  map <- toolGetMapping(type = "regional", name = getConfig("regionmapping"))
   
   ## Reading in the area data from FAO
   forestry_area <- readSource("FRA2015Doc","plantation_forest")

@@ -15,7 +15,7 @@ convertEurobserver <- function(x,subtype){
     getRegions(x) <- gsub(pattern = "Luxemburg",replacement = "Luxembourg",getRegions(x))
     getRegions(x) <- toolCountry2isocode(getRegions(x))
     
-    mapping <- toolMappingFile(type = "regional",name = "regionmappingREMIND.csv",readcsv = T,where = "mappingfolder")
+    mapping <- toolGetMapping(type = "regional", name = "regionmappingREMIND.csv")
     
     
     # indicator to distribute to ROW

@@ -27,7 +27,7 @@ calcFishCCimpacts <- function(impacts=c("marine_capture","marine_aquaculture"),t
   w = x_General[,,"PrimProdMtYr"]  * x_General[,,"ExclEconZoneAreainkm2"]
 
   # aggregate marine_CC_impacts from EEZ to FAO fishing areas
-  relationmatrix <- toolMappingFile(type = "regional",name = "FAOfishingarea2EEZ.csv",readcsv = T)
+  relationmatrix <- toolGetMapping(type = "regional", name = "FAOfishingarea2EEZ.csv")
   marine_CC_impacts <- toolAggregate(marine_CC_impacts, rel=relationmatrix, from="ExclEconZone",
   to="FAO_Fishing_Area", weight=collapseNames(w),dim=3.1)
   
